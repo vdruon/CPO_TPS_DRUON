@@ -33,7 +33,7 @@ public class TP1_convertisseur_DRUON {
     
     //methode pour convertir des farenheit en celsius
     public static double FarenheitVersCelsius (double tFarenheit) {
-        double tCelsius = (tFarenheit - 32)*(5/9);   
+        double tCelsius = (tFarenheit - 32)*(5/9.0);   
         return tCelsius;
     }
     
@@ -41,7 +41,7 @@ public class TP1_convertisseur_DRUON {
     
    //methode pour convertir des celsius en farenheit
     public static double CelsiusVersFarenheit (double tCelsius) {
-        double tFarenheit = tCelsius*(9/5) + 32;   
+        double tFarenheit = tCelsius*(9/5.0) + 32;   
         return tFarenheit;
     }
     
@@ -82,13 +82,29 @@ public class TP1_convertisseur_DRUON {
         int nConvertion = sc.nextInt();
         
         
-        //appliquer chaque convertion à sa methode
+        //appliquer chaque convertion à sa methode, à l'aide de "switch", l'équivalent de if en plus simple je trouve, en fonction de ce que l'utilisateur souhaite
         switch (nConvertion) {
             case 1 :
                 System.out.println("le resultat est " + CelsiusVersKelvin(Temp1) );
                 break;
             case 2 :  
-                System.out.
+                System.out.println("le resultat est " + KelvinVersCelsius(Temp1) );
+                break;
+            case 3 :
+                System.out.println("le resultat est " + FarenheitVersCelsius(Temp1) );
+                break;
+            case 4 : 
+                System.out.println("le resultat est " + CelsiusVersFarenheit(Temp1));
+                break;
+            case 5 :
+                System.out.println("le resultat est " + KelvinVersFarenheit(Temp1));
+                break;
+            case 6 :
+                System.out.println("le resultat est " + FarenheitVersKelvin(Temp1));
+                break;
+            default :
+                System.out.println("veuillez choisir une conversion entre 1 et 6");
+                break;
         }
     }
     
