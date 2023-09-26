@@ -85,22 +85,22 @@ public class TP1_convertisseur_DRUON {
         //appliquer chaque convertion à sa methode, à l'aide de "switch", l'équivalent de if en plus simple je trouve, en fonction de ce que l'utilisateur souhaite
         switch (nConvertion) {
             case 1 :
-                System.out.println("le resultat est " + CelsiusVersKelvin(Temp1) );
+                System.out.println(Temp1 + " degre Celsius est egal a " + CelsiusVersKelvin(Temp1) + " degre Kelvin" );
                 break;
             case 2 :  
-                System.out.println("le resultat est " + KelvinVersCelsius(Temp1) );
+                System.out.println(Temp1 + " degre Kelvin est egal a " + KelvinVersCelsius(Temp1) + " degre Celsius" );
                 break;
             case 3 :
-                System.out.println("le resultat est " + FarenheitVersCelsius(Temp1) );
+                System.out.println(Temp1 + " degre Farenheit est egal a " + FarenheitVersCelsius(Temp1) + " degre Celsius" );
                 break;
             case 4 : 
-                System.out.println("le resultat est " + CelsiusVersFarenheit(Temp1));
+                System.out.println(Temp1 + " degre Celsius est egal a " + CelsiusVersFarenheit(Temp1) + " degre Farenheit");
                 break;
             case 5 :
-                System.out.println("le resultat est " + KelvinVersFarenheit(Temp1));
+                System.out.println(Temp1 + "degre Kelvin est egal a " + KelvinVersFarenheit(Temp1) + " degre Farenheit");
                 break;
             case 6 :
-                System.out.println("le resultat est " + FarenheitVersKelvin(Temp1));
+                System.out.println(Temp1 + " degre Farenheit est egal a " + FarenheitVersKelvin(Temp1) + " degre Kelvin");
                 break;
             default :
                 System.out.println("veuillez choisir une conversion entre 1 et 6");
