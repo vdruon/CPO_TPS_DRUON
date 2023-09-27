@@ -23,7 +23,7 @@ public class TP1_guessMyNumber_DRUON {
 
         // generer un chiffre entre 0 et 9, soit une possibilité de 10 chiffres
         Random generateurAleat = new Random();
-        int n_diab = generateurAleat.nextInt(9);
+        int n_diab = generateurAleat.nextInt(10);
         int a = 0;
 
         // on souhaite une probabilité de 30%, on va donc creer une boucle "if" avec comme conditions d'avoir 1 chiffre sur 3 différents, afin de créer une probabilité de 3/10
@@ -64,7 +64,7 @@ public class TP1_guessMyNumber_DRUON {
             case 1:
 
                 // générons maintenant un entier alétoire inférieur ou égale à 100 (positif)
-                int n = generateurAleat.nextInt(100);
+                int n = generateurAleat.nextInt(101);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
                 System.out.println("\n\n\nChoisir un nombre entier entre 0 et 100");
@@ -181,7 +181,7 @@ public class TP1_guessMyNumber_DRUON {
             case 2:
 
                 // générons maintenant un entier alétoire inférieur ou égale à 100 (positif)
-                n = generateurAleat.nextInt(100);
+                n = generateurAleat.nextInt(101);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
                 System.out.println("\n\n\n\nChoisir un nombre entier entre 0 et 100");
@@ -265,7 +265,7 @@ public class TP1_guessMyNumber_DRUON {
             case 3:
 
                 // générons maintenant un entier alétoire inférieur ou égale à 300 (positif)
-                n = generateurAleat.nextInt(300);
+                n = generateurAleat.nextInt(301);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
                 System.out.println("\n\n\n\nChoisir un nombre entier entre 0 et 300");
