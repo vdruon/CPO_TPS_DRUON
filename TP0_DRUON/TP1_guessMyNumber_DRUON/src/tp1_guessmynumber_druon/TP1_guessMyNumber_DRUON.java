@@ -52,7 +52,7 @@ public class TP1_guessMyNumber_DRUON {
         int mode = sc.nextInt();
         
         //creer le mode diabolique
-        System.out.println("\n\n\n\nVoulez vous jouer en mode DIABOLIQUE ? \nTapez 1 pour oui \nTapez 0 pour non");
+        System.out.println("\n\n\n\nVoulez vous jouer en mode DIABOLIQUE ? \nLe mode DIABOLIQUE vous donne de mauvaises instructions avec une probabilite de 30% \nTapez 1 pour oui \nTapez 0 pour non");
         int mode_diab = sc.nextInt();
                 
                 
