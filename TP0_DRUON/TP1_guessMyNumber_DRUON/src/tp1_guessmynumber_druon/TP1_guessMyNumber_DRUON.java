@@ -48,7 +48,7 @@ public class TP1_guessMyNumber_DRUON {
 
         // créer les différents modes facile, normal, difficile
         Scanner sc = new Scanner(System.in);
-        System.out.println("Quel mode voulez vous choisir ? \n\n\nLe mode FACILE : \nIntervalle : entre 0 et 100 \nNombre de coups : illimite \nMessages d'aide ameliores \n\nLe mode NORMAL : \nIntervalle : entre 0 et 100 \nNombre de coups : 10 \nMessages d'aide \n\nLe mode DIFFICILE : \nIntervalle : entre 0 et 300 \nNombre de coups : 10 \nMessages d'aide \n\n\nTapez 1 pour FACILE\nTapez 2 pour NORMAL\nTapez 3 pour DIFFICILE");
+        System.out.println("Quel mode voulez vous choisir ? \n\n\nLe mode FACILE : \nIntervalle : entre 0 et 100 \nNombre de coups : illimite \nMessages d'aide ameliores \n\nLe mode NORMAL : \nIntervalle : entre 0 et 100 \nNombre de coups : 15 \nMessages d'aide \n\nLe mode DIFFICILE : \nIntervalle : entre 0 et 300 \nNombre de coups : 15 \nMessages d'aide \n\n\nTapez 1 pour FACILE\nTapez 2 pour NORMAL\nTapez 3 pour DIFFICILE");
         int mode = sc.nextInt();
         
         //creer le mode diabolique
@@ -67,7 +67,7 @@ public class TP1_guessMyNumber_DRUON {
                 int n = generateurAleat.nextInt(100);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
-                System.out.println("Choisir un nombre entier entre 0 et 100");
+                System.out.println("\n\n\n\nChoisir un nombre entier entre 0 et 100");
                 int n_user = sc.nextInt();
 
                 // créons une boucle while "tant que les nombres sont différents" pour que l'utilisateur trouve le bon nombre
@@ -184,7 +184,7 @@ public class TP1_guessMyNumber_DRUON {
                 n = generateurAleat.nextInt(100);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
-                System.out.println("Choisir un nombre entier entre 0 et 100");
+                System.out.println("\n\n\n\nChoisir un nombre entier entre 0 et 100");
                 n_user = sc.nextInt();
 
                 // créons une boucle while "tant que les nombres sont différents" pour que l'utilisateur trouve le bon nombre
@@ -242,21 +242,24 @@ public class TP1_guessMyNumber_DRUON {
                     nb_tour += 1;
 
                     // arreter la boucle while si le joueur dépasse les 10 coups
-                    if (nb_tour >= 11) {
+                    if (nb_tour == 15) {
                         break;
                     }
 
                 }
 
-                // arreter la partie si le joueur dépasse les 10 coups
-                if (nb_tour >= 11) {
+                //L'utilisateur a trouvé le bon nombre, félicitons-le
+                if (n == n_user){
+                    System.out.println("Bravo vous avez trouve le bon nombre " + n + " en " + nb_tour + " coup !");
+                    break;  
+                }
+                // sinon arreter la partie
+                else {
                     System.out.println("Vous avez depasse le nombre de coups maximal. Le bon nombre etait " + n + ". Retentez votre chance pour faire mieux ! ");
                     break;
                 }
-
-                //L'utilisateur a trouvé le bon nombre, félicitons-le
-                System.out.println("Bravo vous avez trouve le bon nombre " + n + " en " + nb_tour + " coup !");
-                break;
+                
+                
 
             // l'utilateur chosit DIFFICILE
             case 3:
@@ -265,7 +268,7 @@ public class TP1_guessMyNumber_DRUON {
                 n = generateurAleat.nextInt(300);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
-                System.out.println("Choisir un nombre entier entre 0 et 300");
+                System.out.println("\n\n\n\nChoisir un nombre entier entre 0 et 300");
                 n_user = sc.nextInt();
 
                 // créons une boucle while "tant que les nombres sont différents" pour que l'utilisateur trouve le bon nombre
@@ -315,29 +318,29 @@ public class TP1_guessMyNumber_DRUON {
                     }
 
                     // demander à l'utilisateur de choisir un autre nombre
-                    System.out.println("Choisir un nombre entier entre 0 et 100");
+                    System.out.println("Choisir un nombre entier entre 0 et 300");
                     n_user = sc.nextInt();
 
                     // mettre à jour le compteur
                     nb_tour += 1;
 
                     // arreter la boucle while si le joueur dépasse les 10 coups
-                    if (nb_tour >= 11) {
+                    if (nb_tour == 15) {
                         break;
                     }
-
                 }
-
-                // arreter la partie si le joueur dépasse les 10 coups
-                if (nb_tour >= 11) {
+               
+                //L'utilisateur a trouvé le bon nombre, félicitons-le
+                if (n == n_user){
+                    System.out.println("Bravo vous avez trouve le bon nombre " + n + " en " + nb_tour + " coup !");
+                    break;  
+                }
+                // sinon arreter la partie
+                else {
                     System.out.println("Vous avez depasse le nombre de coups maximal. Le bon nombre etait " + n + ". Retentez votre chance pour faire mieux ! ");
                     break;
                 }
-
-                //L'utilisateur a trouvé le bon nombre, félicitons-le
-                System.out.println("Bravo vous avez trouve le bon nombre " + n + " en " + nb_tour + " coup !");
-                break;
-
+                
         }
 
     }
