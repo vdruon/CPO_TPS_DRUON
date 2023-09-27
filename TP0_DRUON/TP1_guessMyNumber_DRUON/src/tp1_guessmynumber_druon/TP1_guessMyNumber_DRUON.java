@@ -67,7 +67,7 @@ public class TP1_guessMyNumber_DRUON {
                 int n = generateurAleat.nextInt(100);
 
                 // l'utilisateur doit trouver ce nombre, demandons lui quel nombre veut-il choisir
-                System.out.println("\n\n\n\nChoisir un nombre entier entre 0 et 100");
+                System.out.println("\n\n\nChoisir un nombre entier entre 0 et 100");
                 int n_user = sc.nextInt();
 
                 // créons une boucle while "tant que les nombres sont différents" pour que l'utilisateur trouve le bon nombre
