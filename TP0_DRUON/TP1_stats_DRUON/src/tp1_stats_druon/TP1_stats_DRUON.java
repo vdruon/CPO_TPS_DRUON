@@ -65,5 +65,4 @@ public class TP1_stats_DRUON {
         }
         
 }
-    
 }
