@@ -38,15 +38,11 @@ public class TP1_convertisseur_DRUON {
     }
     
     
-    
    //methode pour convertir des celsius en farenheit
     public static double CelsiusVersFarenheit (double tCelsius) {
         double tFarenheit = tCelsius*(9/5.0) + 32;   
         return tFarenheit;
     }
-    
-    
-    
     
     
    //methode pour convertir des kelvin en farenheit
