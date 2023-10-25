@@ -43,7 +43,7 @@ public class GrilleDeCellules {
         // creer la premiere ligne contenant le numero des colonnes 
         String result;
         result = "   |";
-        for (int i=0 ; i < nbColonnes ; i++) {
+        for (int i=1 ; i <= nbColonnes ; i++) {
             result += " " + i + " |";
         }
         
@@ -59,12 +59,12 @@ public class GrilleDeCellules {
         result += "\n";
         
         // creer le reste du tableau ligne par ligne
-        for (int i=0 ; i < nbLignes ; i++) {
+        for (int i=1 ; i <= nbLignes ; i++) {
             
             result += " " + i + " |";
             for (int j=0 ; j < nbColonnes ; j++) {
                 
-                result += " " + matriceCellules[i][j] + " |";
+                result += " " + matriceCellules[i-1][j] + " |";
             }
           
         result += ligne_h + "\n";     
