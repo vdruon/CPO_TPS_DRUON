@@ -16,5 +16,14 @@ public class LightOff_DRUON_version_console {
     public static void main(String[] args) {
         // TODO code application logic here
     
+    GrilleDeCellules g1 = new GrilleDeCellules(7,7);
+    System.out.println(g1);
+    g1.melangerMatriceAleatoirement(50);
+    System.out.println(g1);
+    System.out.println(g1.cellulesToutesEteintes());
+    g1.eteindreToutesLesCellules();
+    System.out.println(g1);
+    System.out.println(g1.cellulesToutesEteintes());
+    }
     
 }
