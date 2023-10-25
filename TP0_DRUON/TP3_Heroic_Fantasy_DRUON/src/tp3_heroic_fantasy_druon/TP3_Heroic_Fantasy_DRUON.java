@@ -7,6 +7,9 @@ package tp3_heroic_fantasy_druon;
 import Armes.Epee;
 import Armes.Arme;
 import Armes.Baton;
+import Personnages.Guerrier;
+import Personnages.Magicien;
+import Personnages.Personnage;
 import java.util.ArrayList;
 
 /**
@@ -21,24 +24,32 @@ public class TP3_Heroic_Fantasy_DRUON {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Epee Excalibur = new Epee("Excalibur" , 7 , 5);
-        Epee Durandal = new Epee("Durandal" , 4 , 7);
+        Epee epee1 = new Epee("Excalibur" , 7 , 5);
+        Epee epee2 = new Epee("Durandal" , 4 , 7);
+        Epee epee3 = new Epee("victor" , 45 , 10);
+        Baton baton1 = new Baton("Chene" , 4 , 5);
+        Baton baton2 = new Baton("Charme" , 5 , 6);
+        Baton baton3 = new Baton("thomas" , 3 , 59);
         
-        Baton Chene = new Baton("Chene" , 4 , 5);
-        Baton Charme = new Baton("Charme" , 5 , 6);
+       
         
-        ArrayList<Arme> Tab_Arme = new ArrayList<Arme>();
-        Tab_Arme.add(Excalibur);
-        Tab_Arme.add(Durandal);
-        Tab_Arme.add(Chene);
-        Tab_Arme.add(Charme);        
+        Magicien Gandalf = new Magicien("Gandalf" , 65 , true);
+        Magicien Garcimore = new Magicien("Garcimore" , 44 , false);
+        Guerrier Conan = new Guerrier("Conan" , 78 , false);
+        Guerrier Lannister = new Guerrier("Lannister" , 45 , true);
         
-        System.out.println(Tab_Arme);
+    
+        Gandalf.addArme(baton1);
+        Gandalf.addArme(baton2);
+        Gandalf.addArme(epee3);
+        Gandalf.choisirArme("victor");
         
+        Conan.addArme(epee1);
+        Conan.addArme(epee2);
+        Conan.addArme(baton3);
         
-        
-        
-        
+        System.out.println(Gandalf);
+        System.out.println(Conan);
         
     }
     
