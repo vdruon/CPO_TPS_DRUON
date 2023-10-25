@@ -29,6 +29,12 @@ public abstract class Arme {
     public int get_nivAttack() {
         return nivAttack;
     }
+
+    public String getName() {
+        return name;
+    }
+    
+    
     
     @Override
     public String toString () {
