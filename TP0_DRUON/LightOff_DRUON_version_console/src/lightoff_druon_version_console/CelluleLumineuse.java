@@ -12,6 +12,9 @@ public class CelluleLumineuse {
     
     
     private boolean etat;
+    String ANSI_RESET = "\u001B[0m";    
+    String ANSI_RED = "\u001B[31m";
+    String ANSI_GREEN = "\u001B[32m";
 
     
     public CelluleLumineuse() {
@@ -64,9 +67,9 @@ public class CelluleLumineuse {
     @Override
     public String toString() {
         if (etat == true) {
-            return "X";
+            return ANSI_RED + "X" + ANSI_RESET;
         } else {
-            return "O";
+            return ANSI_GREEN + "O" + ANSI_RESET;
         }
     }
     

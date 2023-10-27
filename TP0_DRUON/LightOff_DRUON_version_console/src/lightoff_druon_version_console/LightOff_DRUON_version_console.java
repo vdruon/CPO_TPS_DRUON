@@ -15,8 +15,9 @@ public class LightOff_DRUON_version_console {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    
-    Partie p1 = new Partie(8,8);
+            
+        
+    Partie p1 = new Partie(7,7);
     
     p1.lancerPartie();
     

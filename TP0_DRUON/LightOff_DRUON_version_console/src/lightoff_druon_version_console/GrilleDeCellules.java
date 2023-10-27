@@ -67,7 +67,7 @@ public class GrilleDeCellules {
                 result += " " + matriceCellules[i-1][j] + " |";
             }
           
-        result += ligne_h + "\n";     
+            result += ligne_h + "\n";     
         }
         
         return result;
@@ -125,15 +125,19 @@ public class GrilleDeCellules {
                 
         switch (a) {
             case 0 : 
-                activerLigneDeCellules(b);
+               activerLigneDeCellules(b);
+                activerDiagonaleDescendante();
                 break;
             case 1 :
                 activerColonneDeCellules(c);
-                break;
-            case 2 :
                 activerDiagonaleDescendante();
                 break;
+            case 2 :
+                activerDiagonaleMontante();
+                activerLigneDeCellules(b);
+                break;
             case 3 :
+                activerColonneDeCellules(c);
                 activerDiagonaleMontante();
                 break;   
         }
@@ -145,7 +149,7 @@ public class GrilleDeCellules {
      */
     public void melangerMatriceAleatoirement(int nbTours) {
         eteindreToutesLesCellules();
-        for (int i=0 ; i < nbTours ; i++) {
+        for (int i=0 ; i < 10 ; i++) {
             activerLigneColonneOuDiagonaleAleatoire();
         }
     }
