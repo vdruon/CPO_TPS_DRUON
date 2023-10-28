@@ -29,7 +29,7 @@ public class Partie {
      * mélange la grille de jeu pour initialiser la partie
      */
     public void initialiserPartie() {
-        grille.melangerMatriceAleatoirement(50);
+        grille.melangerMatriceAleatoirement();
     }
     
     /**
