@@ -15,7 +15,7 @@ public class CelluleLumineuse {
     String ANSI_RESET = "\u001B[0m";    
     String ANSI_RED = "\u001B[31m";
     String ANSI_GREEN = "\u001B[32m";
-
+    String ANSI_YELLOW = "\u001B[33m";
     
     public CelluleLumineuse() {
         this.etat = 1;
@@ -73,7 +73,7 @@ public class CelluleLumineuse {
         } else if (etat == 2) {
             return ANSI_GREEN + "O" + ANSI_RESET;
         } else {
-            return "I";
+            return ANSI_YELLOW + "I" + ANSI_RESET;
         }
     }
     
