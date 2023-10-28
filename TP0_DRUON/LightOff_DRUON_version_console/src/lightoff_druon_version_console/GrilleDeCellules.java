@@ -79,8 +79,8 @@ public class GrilleDeCellules {
     
     
     /**
-     * active toutes les cellules d'une ligne rentrÃ©e en parametre 
-     * @param idLigne nÂ° de la ligne Ã  activer
+     * active toutes les cellules d'une ligne rentrée en paramètre 
+     * @param idLigne n° de la ligne à activer
      */
     public void activerLigneDeCellules(int idLigne) {
          
@@ -90,8 +90,8 @@ public class GrilleDeCellules {
     }
     
     /**
-     * active toutes les cellules d'une colonne rentrÃ©e en parametre
-     * @param idColonne nÂ° de la colonne Ã  activer
+     * active toutes les cellules d'une colonne rentrée en paramètre
+     * @param idColonne n° de la colonne à activer
      */
     public void activerColonneDeCellules(int idColonne) {
          
@@ -131,7 +131,7 @@ public class GrilleDeCellules {
     }
     
     /**
-     * Active alÃ©atoirement les cellules d'une ligne, d'une colonne ou d'une diagonale sur la grille
+     * Active aléatoirement les cellules d'une ligne, d'une colonne ou d'une diagonale sur la grille
      */
      void activerLigneColonneOuDiagonaleAleatoire() {
         Random generateurAleat = new Random();
@@ -160,8 +160,8 @@ public class GrilleDeCellules {
     }
     
     /**
-     * MÃ©lange la grille de jeu grace Ã  la fonction activerLigneColonneOuDiagonaleAleatoire()
-     * @param nbTours nombre de fois que l'on veut mÃ©langer la grille 
+     * Mélange la grille de jeu grace à la fonction activerLigneColonneOuDiagonaleAleatoire()
+     * @param nbTours nombre de fois que l'on veut mélanger la grille 
      */
     public void melangerMatriceAleatoirement(int nbTours) {
         eteindreToutesLesCellules();
@@ -182,8 +182,8 @@ public class GrilleDeCellules {
     }
     
     /**
-     * Cette fonction vÃ©rifie si toutes les cellules de la grille sont Ã©teintes
-     * @return true si toutes les cellules sont eteintes, false le cas contraire
+     * Cette fonction vérifie si toutes les cellules de la grille sont éteintes
+     * @return true si toutes les cellules sont éteintes, false le cas contraire
      */
     public boolean cellulesToutesEteintes() {
         boolean rep = true ;

@@ -68,9 +68,9 @@ public class CelluleLumineuse {
 
     @Override
     public String toString() {
-        if (etat == 1) {
+        if (etat == 2) {
             return ANSI_RED + "X" + ANSI_RESET;
-        } else if (etat == 2) {
+        } else if (etat == 1) {
             return ANSI_GREEN + "O" + ANSI_RESET;
         } else {
             return ANSI_YELLOW + "I" + ANSI_RESET;
