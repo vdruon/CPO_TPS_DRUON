@@ -4,6 +4,8 @@
  */
 package lightoff_druon_version_console;
 
+import java.util.Scanner;
+
 /**
  *
  * @author vdruo
@@ -16,8 +18,12 @@ public class LightOff_DRUON_version_console {
     public static void main(String[] args) {
         // TODO code application logic here
             
-        
-    Partie p1 = new Partie(7,7);
+    Scanner sc = new Scanner(System.in); 
+    System.out.println("Combien de lignes voulez-vous ?");
+    int n_lignes = sc.nextInt();
+    System.out.println("\nCombien de colonnes voulez-vous ?");
+    int n_colonnes = sc.nextInt();
+    Partie p1 = new Partie(n_lignes,n_colonnes);
     
     p1.lancerPartie();
     

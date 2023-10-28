@@ -19,7 +19,7 @@ public class GrilleDeCellules {
 
     
     /**
-     * Cr√©√© une grille de dimensions choisie en param√®tre, et cr√©√© les cellules √† l'int√©rieur de la grille
+     * CrÈÈ une grille de dimensions choisie en paramËtre, et crÈÈ les cellules ‡ l'intÈrieur de la grille
      * @param p_nbLignes le nombre de lignes de la grille
      * @param p_nbColonnes le nombre de colonne de la grille
      */
@@ -36,6 +36,16 @@ public class GrilleDeCellules {
         }
     }
 
+    public String ligne_h() {
+        // creer la ligne horiontale qui s√©pare les lignes
+        String ligne_h;
+        ligne_h ="\n----";
+        for (int i=0 ; i < nbColonnes ; i++) {
+            ligne_h += "----";
+        }
+        return ligne_h;
+    }
+    
     
     @Override
     public String toString() {
@@ -47,14 +57,7 @@ public class GrilleDeCellules {
             result += " " + i + " |";
         }
         
-        
-        // creer la ligne horiontale qui s√©pare les lignes
-        String ligne_h;
-        ligne_h ="\n----";
-        for (int i=0 ; i < nbColonnes ; i++) {
-            ligne_h += "----";
-        }
-        result += ligne_h;
+        result += ligne_h();
         
         result += "\n";
         
@@ -67,8 +70,9 @@ public class GrilleDeCellules {
                 result += " " + matriceCellules[i-1][j] + " |";
             }
           
-            result += ligne_h + "\n";     
+            result += ligne_h() + "\n";     
         }
+        
         
         return result;
     }
@@ -100,8 +104,14 @@ public class GrilleDeCellules {
      * active les cellules de la diagonale descendante de la grille
      */
     public void activerDiagonaleDescendante() {
-        for (int i=0 ; i < nbLignes ; i++) {
-            matriceCellules[i][i].activerCellule();
+        if (nbLignes<nbColonnes){
+            for (int i=0 ; i < nbLignes ; i++) {
+                matriceCellules[i][i].activerCellule();
+            }
+        } else {
+            for (int i=0 ; i < nbColonnes ; i++) {
+                matriceCellules[i][i].activerCellule();
+            }
         }
     }
     
@@ -109,15 +119,21 @@ public class GrilleDeCellules {
      * active les cellules de la diagonale descendante de la grille
      */
     public void activerDiagonaleMontante() {
-        for (int i=0 ; i < nbLignes ; i++) {
-            matriceCellules[nbLignes-1-i][i].activerCellule();
+        if (nbLignes<nbColonnes) {
+            for (int i=0 ; i < nbLignes ; i++) {
+                matriceCellules[nbLignes-1-i][i].activerCellule();
+            }
+        } else {
+            for (int i=0 ; i < nbColonnes ; i++) {
+                matriceCellules[nbLignes-1-i][i].activerCellule();
+            }
         }
     }
     
     /**
      * Active al√©atoirement les cellules d'une ligne, d'une colonne ou d'une diagonale sur la grille
      */
-    public void activerLigneColonneOuDiagonaleAleatoire() {
+     void activerLigneColonneOuDiagonaleAleatoire() {
         Random generateurAleat = new Random();
         int a = generateurAleat.nextInt(4);
         int b = generateurAleat.nextInt(nbLignes);
@@ -125,7 +141,7 @@ public class GrilleDeCellules {
                 
         switch (a) {
             case 0 : 
-               activerLigneDeCellules(b);
+                activerLigneDeCellules(b);
                 activerDiagonaleDescendante();
                 break;
             case 1 :

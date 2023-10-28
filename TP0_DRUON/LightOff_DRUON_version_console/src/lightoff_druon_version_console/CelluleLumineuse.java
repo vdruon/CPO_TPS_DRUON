@@ -11,24 +11,26 @@ package lightoff_druon_version_console;
 public class CelluleLumineuse {
     
     
-    private boolean etat;
+    private int etat;
     String ANSI_RESET = "\u001B[0m";    
     String ANSI_RED = "\u001B[31m";
     String ANSI_GREEN = "\u001B[32m";
 
     
     public CelluleLumineuse() {
-        this.etat = false;
+        this.etat = 1;
     }
     
     /**
-     * Change l'état de la cellule 
+     * Change l'�tat de la cellule 
      */
     public void activerCellule() {
-        if (etat == true) {
-            etat=false;
+        if (etat == 1) {
+            etat=2;
+        } else if (etat==2) {
+            etat=3;
         } else {
-            etat=true;
+            etat=1;
         }
     }
     
@@ -36,8 +38,8 @@ public class CelluleLumineuse {
      * Eteins la cellule si elle est allumée, ne fait rien sinon
      */
     public void eteindreCellule() {
-        if (etat == true) {
-            etat=false;
+        if (etat == 2 || etat==3) {
+            etat=1;
         }
     }
     
@@ -47,10 +49,10 @@ public class CelluleLumineuse {
      * @return true si la cellule est éteinte, false sinon
      */
     public boolean estEteint() {
-        if (etat==true) {
-            return false;
-        } else {
+        if (etat==1) {
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -60,16 +62,18 @@ public class CelluleLumineuse {
      * 
      * @return etat
      */
-    public boolean getEtat() {
+    public int getEtat() {
         return etat;
     }
 
     @Override
     public String toString() {
-        if (etat == true) {
+        if (etat == 1) {
             return ANSI_RED + "X" + ANSI_RESET;
-        } else {
+        } else if (etat == 2) {
             return ANSI_GREEN + "O" + ANSI_RESET;
+        } else {
+            return "I";
         }
     }
     

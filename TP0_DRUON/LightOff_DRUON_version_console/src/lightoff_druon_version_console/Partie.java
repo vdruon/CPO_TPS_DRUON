@@ -16,7 +16,7 @@ public class Partie {
     int nbCoups;
 
     /**
-     *crÃ©e une nouvelle instance de la grille de cellules lumineuses
+     *crée une nouvelle instance de la grille de cellules lumineuses
      * @param p_nbLignes nombre de lignes de la grille
      * @param p_nbColonnes nombre de colonnes de la grille
      */
@@ -26,7 +26,7 @@ public class Partie {
     }
     
     /**
-     * mÃ©lange la grille de jeu pour initialiser la partie
+     * mélange la grille de jeu pour initialiser la partie
      */
     public void initialiserPartie() {
         grille.melangerMatriceAleatoirement(50);
@@ -69,11 +69,13 @@ public class Partie {
         }
         
         
-        // incrÃ©menter le nombre de coups
+        // incrémenter le nombre de coups 
         nbCoups += 1;
         
         // afficher la nouvelle grille
         System.out.println(grille);
+        // afficher la case nbCouops
+        System.out.println(CaseNbCoups() + "\n\n");
     }
      
     // fin du jeu, afficher le nombre de coups
@@ -81,6 +83,15 @@ public class Partie {
         
     } 
     
+    
+    public String CaseNbCoups() {
+        
+        String result = "-------------------------";
+        result += "\n|  nombre de coups : " + nbCoups + "  |\n";
+        result += "-------------------------";
+        return result;
+        
+    }
     
     
 }
