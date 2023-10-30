@@ -16,6 +16,7 @@ public class CelluleLumineuse {
     String ANSI_RED = "\u001B[31m";
     String ANSI_GREEN = "\u001B[32m";
     String ANSI_YELLOW = "\u001B[33m";
+    String ANSI_BLUE = "\u001B[34m";
     
     public CelluleLumineuse() {
         this.etat = 1;
@@ -30,6 +31,16 @@ public class CelluleLumineuse {
                 etat=2;
             } else if (etat==2) {
                 etat=3;
+            } else {
+                etat=1;
+            }
+        } else if (diff==2) {
+            if (etat == 1) {
+                etat=2;
+            } else if (etat==2) {
+                etat=3;
+            } else if (etat==3){
+                etat=4;
             } else {
                 etat=1;
             }
@@ -80,8 +91,10 @@ public class CelluleLumineuse {
             return ANSI_RED + "X" + ANSI_RESET;
         } else if (etat == 1) {
             return ANSI_GREEN + "O" + ANSI_RESET;
-        } else {
+        } else if (etat==3){
             return ANSI_YELLOW + "I" + ANSI_RESET;
+        } else {
+            return ANSI_BLUE + "H" + ANSI_RESET;
         }
     }
     

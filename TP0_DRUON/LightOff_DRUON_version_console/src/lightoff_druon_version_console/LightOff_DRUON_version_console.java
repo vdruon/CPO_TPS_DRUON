@@ -23,7 +23,7 @@ public class LightOff_DRUON_version_console {
     int n_lignes = sc.nextInt();
     System.out.println("\nCombien de colonnes voulez-vous ?");
     int n_colonnes = sc.nextInt();
-    System.out.println("\nQuelle dificulté voulez-vous ? 0 pour NORMAL(2 couleurs), 1 pour DIFFICILE(3 couleurs)");
+    System.out.println("\nQuelle dificulté voulez-vous ? 0 pour NORMAL(2 couleurs), 1 pour DIFFICILE(3 couleurs), 2 pour CAUCHEMARD(4 couleurs)");
     int diff = sc.nextInt();
     Partie p1 = new Partie(n_lignes,n_colonnes, diff);
     
