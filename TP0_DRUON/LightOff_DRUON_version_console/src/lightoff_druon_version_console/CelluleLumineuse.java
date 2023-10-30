@@ -24,13 +24,21 @@ public class CelluleLumineuse {
     /**
      * Change l'état de la cellule 
      */
-    public void activerCellule() {
-        if (etat == 1) {
-            etat=2;
-        } else if (etat==2) {
-            etat=3;
+    public void activerCellule(int diff) {
+        if (diff==1) {
+            if (etat == 1) {
+                etat=2;
+            } else if (etat==2) {
+                etat=3;
+            } else {
+                etat=1;
+            }
         } else {
-            etat=1;
+            if (etat == 1) {
+                etat=2;
+            } else {
+                etat=1;
+            }
         }
     }
     

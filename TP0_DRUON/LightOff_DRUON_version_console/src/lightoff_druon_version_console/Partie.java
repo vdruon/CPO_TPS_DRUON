@@ -20,8 +20,8 @@ public class Partie {
      * @param p_nbLignes nombre de lignes de la grille
      * @param p_nbColonnes nombre de colonnes de la grille
      */
-    public Partie(int p_nbLignes, int p_nbColonnes) {
-        grille = new GrilleDeCellules(p_nbLignes, p_nbColonnes);
+    public Partie(int p_nbLignes, int p_nbColonnes, int diff) {
+        grille = new GrilleDeCellules(p_nbLignes, p_nbColonnes, diff);
         nbCoups = 0;
     }
     
@@ -47,7 +47,7 @@ public class Partie {
         Scanner sc = new Scanner(System.in);
         System.out.println("Quel coup voulez-vous jouez ? \nSous la forme : (ligne ou colonne ou diagonal) et numero (ex: c1 pour colonne 1) ");                
         String rep = sc.next();    
-        int indice = rep.charAt(1) -'0';
+        int indice = rep.charAt(1) - '0';
         
         // activer la ligne, la colonne ou la diagonale correspondante
         switch (rep.charAt(0)) {

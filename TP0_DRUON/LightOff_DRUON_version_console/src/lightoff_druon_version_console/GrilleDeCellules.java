@@ -16,6 +16,7 @@ public class GrilleDeCellules {
     CelluleLumineuse[][] matriceCellules;
     int nbLignes;
     int nbColonnes;
+    int difficulte;
 
     
     /**
@@ -23,9 +24,10 @@ public class GrilleDeCellules {
      * @param p_nbLignes le nombre de lignes de la grille
      * @param p_nbColonnes le nombre de colonne de la grille
      */
-    public GrilleDeCellules(int p_nbLignes, int p_nbColonnes) {
+    public GrilleDeCellules(int p_nbLignes, int p_nbColonnes, int diffuclte) {
         this.nbLignes = p_nbLignes;
         this.nbColonnes = p_nbColonnes;
+        this.difficulte = diffuclte;
         
         matriceCellules = new CelluleLumineuse[p_nbLignes][p_nbColonnes];
         
@@ -85,7 +87,7 @@ public class GrilleDeCellules {
     public void activerLigneDeCellules(int idLigne) {
          
         for (int i=0 ; i < nbColonnes ; i++) {
-            matriceCellules[idLigne][i].activerCellule();
+            matriceCellules[idLigne][i].activerCellule(difficulte);
         }
     }
     
@@ -96,7 +98,7 @@ public class GrilleDeCellules {
     public void activerColonneDeCellules(int idColonne) {
          
         for (int i=0 ; i < nbLignes ; i++) {
-            matriceCellules[i][idColonne].activerCellule();
+            matriceCellules[i][idColonne].activerCellule(difficulte);
         }
     }
     
@@ -106,11 +108,11 @@ public class GrilleDeCellules {
     public void activerDiagonaleDescendante() {
         if (nbLignes<nbColonnes){
             for (int i=0 ; i < nbLignes ; i++) {
-                matriceCellules[i][i].activerCellule();
+                matriceCellules[i][i].activerCellule(difficulte);
             }
         } else {
             for (int i=0 ; i < nbColonnes ; i++) {
-                matriceCellules[i][i].activerCellule();
+                matriceCellules[i][i].activerCellule(difficulte);
             }
         }
     }
@@ -121,11 +123,11 @@ public class GrilleDeCellules {
     public void activerDiagonaleMontante() {
         if (nbLignes<nbColonnes) {
             for (int i=0 ; i < nbLignes ; i++) {
-                matriceCellules[nbLignes-1-i][i].activerCellule();
+                matriceCellules[nbLignes-1-i][i].activerCellule(difficulte);
             }
         } else {
             for (int i=0 ; i < nbColonnes ; i++) {
-                matriceCellules[nbLignes-1-i][i].activerCellule();
+                matriceCellules[nbLignes-1-i][i].activerCellule(difficulte);
             }
         }
     }
