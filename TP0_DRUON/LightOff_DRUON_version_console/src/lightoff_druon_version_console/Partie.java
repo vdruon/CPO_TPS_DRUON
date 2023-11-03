@@ -47,7 +47,9 @@ public class Partie {
         Scanner sc = new Scanner(System.in);
         System.out.println("Quel coup voulez-vous jouez ? \nSous la forme : (ligne ou colonne ou diagonal) et numero (ex: c1 pour colonne 1) ");                
         String rep = sc.next();    
-        int indice = rep.charAt(1) - '0';
+        int indice = rep.charAt(1) - '0' ;
+        
+        System.out.println(indice);
         
         // activer la ligne, la colonne ou la diagonale correspondante
         switch (rep.charAt(0)) {

@@ -163,11 +163,10 @@ public class GrilleDeCellules {
     
     /**
      * Mélange la grille de jeu grace à la fonction activerLigneColonneOuDiagonaleAleatoire()
-     * @param nbTours nombre de fois que l'on veut mélanger la grille 
      */
     public void melangerMatriceAleatoirement() {
         eteindreToutesLesCellules();
-        for (int i=0 ; i < 10 ; i++) {
+        for (int i=0 ; i < 50 ; i++) {
             activerLigneColonneOuDiagonaleAleatoire();
         }
     }
