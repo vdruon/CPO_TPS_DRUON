@@ -18,6 +18,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     GrilleDeCellules grille;
     int nbCoups;
     int i;
+    boolean cellEteint = true;
+        int nbLignes = 10;
+        int nbColonnes = 10;
+        int diff = 0;
     
     /**
      * Creates new form FenetrePrincipale
@@ -26,7 +30,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         initComponents();
         int nbLignes = 10;
         int nbColonnes = 10;
-        int diff = 2;
+        int diff = 0;
         this.grille = new GrilleDeCellules(nbLignes, nbColonnes, diff);
         
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
@@ -57,12 +61,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerLigneDeCellules(j);
                     repaint();
+                    partieFinie();
                 }
             };
-        bouton_ligne.addActionListener(ecouteurClick);
-        PanneauBoutonVerticaux.add(bouton_ligne);
- 
-        }
+            bouton_ligne.addActionListener(ecouteurClick);
+            PanneauBoutonVerticaux.add(bouton_ligne);
+
+            }
         
         
         PanneauBoutonHorizontaux.setLayout(new GridLayout(1, nbColonnes));
@@ -80,6 +85,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerColonneDeCellules(j);
                     repaint();
+                    partieFinie();
                 }
             };
         bouton_colonne.addActionListener(ecouteurClick);
@@ -99,10 +105,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerDiagonaleDescendante();
                     repaint();
+                    partieFinie();
                 }
             };
         bouton_diag1.addActionListener(ecouteurClick);
         PanneauBoutonDiagonale1.add(bouton_diag1);
+        
         
         
         PanneauBoutonDiagonale2.setLayout(new GridLayout(1, 1));
@@ -116,7 +124,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerDiagonaleMontante();
                     repaint();
+                    partieFinie();
                 }
+              
             };
         bouton_diag2.addActionListener(ecouteurClick1);
         PanneauBoutonDiagonale2.add(bouton_diag2);
@@ -124,6 +134,25 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         
     }
 
+    public void partieFinie() {
+        
+        for (int i=0; i < nbLignes; i++) {
+            for (int j=0; j < nbColonnes; j++ ) {
+                if (grille.matriceCellules[i][j].estEteint()==false){
+                    cellEteint = false;
+                }
+            }
+        }
+        
+        if (cellEteint == true) {
+            FenetreVictoire f = new FenetreVictoire() ;
+            f.setVisible(true) ;
+        }
+        
+        cellEteint = true;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
