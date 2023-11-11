@@ -22,6 +22,8 @@ public class CelluleLumineuse {
         this.etat = 1;
     }
     
+    
+    
     /**
      * Change l'état de la cellule 
      */
