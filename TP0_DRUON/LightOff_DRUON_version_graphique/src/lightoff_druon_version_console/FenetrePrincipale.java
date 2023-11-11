@@ -22,15 +22,17 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         int nbLignes = 10;
         int nbColonnes = 10;
         int diff = 0;
+        
     
     /**
      * Creates new form FenetrePrincipale
      */
     public FenetrePrincipale() {
+        nbCoups=0;
         initComponents();
         int nbLignes = 10;
         int nbColonnes = 10;
-        int diff = 0;
+        int diff = 2;
         this.grille = new GrilleDeCellules(nbLignes, nbColonnes, diff);
         
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));

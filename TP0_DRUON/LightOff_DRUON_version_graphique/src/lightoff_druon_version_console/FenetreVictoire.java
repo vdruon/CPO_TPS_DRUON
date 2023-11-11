@@ -45,17 +45,17 @@ public class FenetreVictoire extends javax.swing.JFrame {
         PanelBoutonVictoire.setLayout(PanelBoutonVictoireLayout);
         PanelBoutonVictoireLayout.setHorizontalGroup(
             PanelBoutonVictoireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBoutonVictoireLayout.createSequentialGroup()
-                .addContainerGap(355, Short.MAX_VALUE)
+            .addGroup(PanelBoutonVictoireLayout.createSequentialGroup()
+                .addGap(214, 214, 214)
                 .addComponent(TexteVictoire, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(352, 352, 352))
+                .addContainerGap(493, Short.MAX_VALUE))
         );
         PanelBoutonVictoireLayout.setVerticalGroup(
             PanelBoutonVictoireLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBoutonVictoireLayout.createSequentialGroup()
-                .addGap(195, 195, 195)
+                .addGap(213, 213, 213)
                 .addComponent(TexteVictoire, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
