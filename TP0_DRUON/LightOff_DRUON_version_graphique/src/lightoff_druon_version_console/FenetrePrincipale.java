@@ -19,9 +19,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     int nbCoups;
     int i;
     boolean cellEteint = true;
-        int nbLignes = 10;
-        int nbColonnes = 10;
-        int diff = 0;
+    int nbLignes;
+    int nbColonnes;
+    int diff;
+    
         
     
     /**
@@ -30,9 +31,16 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     public FenetrePrincipale() {
         nbCoups=0;
         initComponents();
-        int nbLignes = 10;
-        int nbColonnes = 10;
-        int diff = 2;
+        
+        
+        FenetreDebutPartie f1 = new FenetreDebutPartie();
+        f1.setVisible(true);
+        diff = f1.ChoixDiff();
+        nbLignes = f1.nbLignes();
+        nbColonnes = f1.nbColonnes();
+        f1.setVisible(false);
+        
+        
         this.grille = new GrilleDeCellules(nbLignes, nbColonnes, diff);
         
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
@@ -63,13 +71,13 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerLigneDeCellules(j);
                     repaint();
-                    partieFinie();
+                    partieFinie(nbLignes, nbColonnes);
                 }
             };
             bouton_ligne.addActionListener(ecouteurClick);
             PanneauBoutonVerticaux.add(bouton_ligne);
 
-            }
+        }
         
         
         PanneauBoutonHorizontaux.setLayout(new GridLayout(1, nbColonnes));
@@ -87,7 +95,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerColonneDeCellules(j);
                     repaint();
-                    partieFinie();
+                    partieFinie(nbLignes, nbColonnes);
                 }
             };
         bouton_colonne.addActionListener(ecouteurClick);
@@ -107,7 +115,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerDiagonaleDescendante();
                     repaint();
-                    partieFinie();
+                    partieFinie(nbLignes, nbColonnes);
                 }
             };
         bouton_diag1.addActionListener(ecouteurClick);
@@ -126,7 +134,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     grille.activerDiagonaleMontante();
                     repaint();
-                    partieFinie();
+                    partieFinie(nbLignes, nbColonnes);
                 }
               
             };
@@ -136,7 +144,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         
     }
 
-    public void partieFinie() {
+    public void partieFinie(int nbLignes, int nbColonnes) {
         
         for (int i=0; i < nbLignes; i++) {
             for (int j=0; j < nbColonnes; j++ ) {
